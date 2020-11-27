@@ -28,6 +28,11 @@
           description="Count all your words."
         />
         <Card
+          title="Date"
+          slug="date"
+          description="ISO, UTC, week, local time, etc."
+        />
+        <Card
           title="More coming soon™..."
           slug="/"
           class="opacity-75 bg-gradient-to-r from-blue-50 to-red-100"
