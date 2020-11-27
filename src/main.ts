@@ -4,11 +4,13 @@ import App from './App.vue'
 import './index.css'
 
 import Home from './Home.vue'
-import About from './components/HelloWorld.vue'
+import Hello from './components/HelloWorld.vue'
+import WordCount from './components/WordCount.vue'
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/about', component: About },
+  { path: '/word-count', component: WordCount },
+  { path: '/hello', component: Hello },
 ]
 
 const app = createApp(App)
