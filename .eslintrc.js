@@ -20,5 +20,6 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
     'vue/no-multiple-template-root': 'off',
+    'vue/no-v-for-template-key': 'off', // https://eslint.vuejs.org/rules/no-v-for-template-key-on-child.html
   },
 }

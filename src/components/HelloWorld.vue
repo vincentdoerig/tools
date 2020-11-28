@@ -1,7 +1,7 @@
 <template>
   <ToolsComponent
     title="Hello World"
-    description="Hello, this website is a collection of online tools I need and use. No bullshit and straight to the point."
+    description="Hello, this website is a collection of online tools I need and use. No bullshit and straight to the point, made by myself."
   />
 </template>
 

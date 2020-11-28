@@ -13,7 +13,7 @@
     >
       <div
         v-if="copySuccess"
-        class="absolute p-4 rounded-md top-4 right-4 bg-green-50"
+        class="absolute p-4 border border-green-600 rounded-md top-4 right-4 bg-green-50"
       >
         <div class="flex">
           <div class="flex-shrink-0">

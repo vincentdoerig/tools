@@ -17,26 +17,18 @@
         >GitHub</a>.
       </p>
       <div class="grid grid-cols-none gap-4 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <Card
-          title="Hello World"
-          slug="hello"
-          description="👋"
-        />
-        <Card
-          title="Word Count"
-          slug="word-count"
-          description="Count all your words."
-        />
-        <Card
-          title="Date"
-          slug="date"
-          description="ISO, UTC, week, local time, etc."
-        />
-        <Card
-          title="More coming soon™..."
-          slug="/"
-          class="opacity-75 bg-gradient-to-r from-blue-50 to-red-100"
-        />
+        <template
+          v-for="card in cards"
+          :key="card.slug"
+        >
+          <Card
+            :title="card.title"
+            :slug="card.slug"
+            :url="card.url"
+            :description="card.description"
+            :class="card.class || ''"
+          />
+        </template>
       </div>
     </div>
   </div>
@@ -51,6 +43,44 @@ import Card from './components/Card.vue'
 export default defineComponent({
   components: {
     Card,
+  },
+
+  setup() {
+    const cards = [
+      {
+        title: 'Hello World',
+        slug: 'hello',
+        description: '👋',
+      },
+      {
+        title: 'Word Count',
+        slug: 'word-count',
+        description: 'Count all your words.',
+      },
+      {
+        title: 'Date',
+        slug: 'date',
+        description: 'ISO, UTC, week, local time, etc.',
+      },
+      {
+        title: 'Stopwatch',
+        url: 'https://gymtimer.io',
+        description: 'Stopwatch with an integrated break timer.',
+      },
+      {
+        title: 'Imgur Image Uploader',
+        url: 'https://img.doerig.dev',
+        description: 'Quickly upload any image to imgur.com.',
+      },
+      {
+        title: 'More coming soon™...',
+        slug: '/',
+        description: '',
+        class: 'opacity-75 bg-gradient-to-r from-blue-50 to-red-100',
+      },
+    ]
+
+    return { cards }
   },
 })
 </script>
