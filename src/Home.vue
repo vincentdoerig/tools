@@ -72,6 +72,11 @@ export default defineComponent({
         url: 'https://img.doerig.dev',
         description: 'Quickly upload any image to imgur.com.',
       },
+       {
+        title: 'Video to GIF',
+        slug: 'video-to-gif',
+        description: 'Online video to gif converter.',
+      },
       {
         title: 'More coming soon™...',
         slug: '/',

@@ -6,6 +6,7 @@ import './index.css'
 
 import Home from './Home.vue'
 import Hello from './components/HelloWorld.vue'
+import VideoToGIF from './components/VideoToGIF.vue'
 import WordCount from './components/WordCount.vue'
 import Date from './components/Date.vue'
 
@@ -13,6 +14,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/word-count', component: WordCount },
   { path: '/date', component: Date },
+  { path: '/video-to-gif', component: VideoToGIF },
   { path: '/hello', component: Hello },
 ]
 

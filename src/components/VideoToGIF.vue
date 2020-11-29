@@ -1,0 +1,220 @@
+<template>
+  <ToolsComponent
+    title="Video to GIF converter"
+    description="/ɡɪf/ — no upload, everything happens on your device"
+  >
+    <div v-if="!isSupported || error">
+      <div class="p-4 border-l-4 border-yellow-400 bg-yellow-50">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <!-- Heroicon name: exclamation -->
+            <svg
+              class="w-5 h-5 text-yellow-400"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-yellow-700">
+              {{ error ? error : 'Your browser does not support the functionality of this tool. Please try with a supported browser like Firefox, Chrome or Edge.' }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-else>
+      <div class="grid grid-cols-none gap-4 sm:grid-cols-2">
+        <div
+          class="flex flex-col items-center justify-center p-6 bg-white rounded shadow-sm"
+        >
+          <video
+            v-if="video"
+            :src="video"
+            class="w-auto h-auto mb-4"
+            controls
+            muted
+            alt="video preview"
+          />
+          <button
+            v-if="!video"
+            type="button"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            @click="$refs.input.click()"
+          >
+            Select video
+          </button>
+          <button
+            v-else
+            type="button"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-md shadow-sm disabled:cursor-not-allowed hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 disabled:opacity-50"
+            :disabled="!isReady || !isSupported"
+            @click="convert(videoFile)"
+          >
+            {{ isReady ? 'Convert video &rarr;' : isSupported ? 'Wait, library loading...' : 'Your browser is not supported' }}
+          </button>
+          <input
+            ref="input"
+            type="file"
+            class="fixed hidden"
+            accept="video/*"
+            @change="addFileTroughInput"
+          >
+        </div>
+        <div class="flex items-center justify-center p-6 bg-white rounded shadow-sm">
+          <div v-if="isConverting">
+            <span class="inline-flex rounded-md shadow-sm">
+              <button
+                type="button"
+                class="inline-flex items-center px-4 py-2 text-base font-medium leading-6 text-black transition duration-150 ease-in-out bg-gray-200 border border-transparent rounded-md cursor-not-allowed bg-rose-600 hover:bg-rose-500 focus:border-rose-700 active:bg-rose-700"
+                disabled=""
+              >
+                <svg
+                  class="w-5 h-5 mr-3 -ml-1 text-black animate-spin"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  />
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  />
+                </svg>
+                Processing
+              </button>
+            </span>
+          </div>
+          <div v-if="gif">
+            <img
+              :src="gif"
+              alt="output gif"
+              class="mb-4"
+            >
+            <button
+              type="button"
+              class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+              @click="download"
+            >
+              Download gif
+            </button>
+          </div>
+          <div
+            v-else
+            class="text-gray-600"
+          >
+            Your GIF will appear here.
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <button
+          type="button"
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          @click="showLogs = !showLogs"
+        >
+          <!-- Heroicon name: terminal -->
+          <svg
+            class="w-5 h-5 mr-3"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            />
+          </svg>
+          Show logs
+        </button>
+        <pre
+          v-if="showLogs"
+          ref="logComponent"
+          class="p-4 my-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56"
+        >{{ logs }}</pre>
+      </div>
+    </div>
+  </ToolsComponent>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref, watch } from 'vue'
+
+import ToolsComponent from './ToolsComponent.vue'
+import useFFmpeg, { logs } from '../utlis/FFmpeg'
+
+export default defineComponent({
+  components: {
+    ToolsComponent,
+  },
+  setup() {
+    const video = ref<null | string>(null)
+    const videoFile = ref<null | Blob>(null)
+    const error = ref<string>('')
+
+    const { isReady, convert, gif, isConverting, isSupported } = useFFmpeg()
+
+    const addFileTroughInput = (e: Event) => {
+      const selectedFile = e.target.files[0]
+      videoFile.value = selectedFile
+      if (!selectedFile) return
+      if (selectedFile.type.split('/')[0] !== 'video') {
+        console.log('File type not supported')
+        error.value = 'File type not supported'
+        return
+      }
+      video.value = URL.createObjectURL(selectedFile)
+    }
+
+    const download = () => {
+      const image = document.createElement('a')
+      image.href = gif.value
+      image.download = `${Date.now()}.gif`
+      image.click()
+    }
+
+    const showLogs = ref<boolean>(false)
+
+    const logComponent = ref(null)
+    watch(logs, () => {
+      // scroll to end of logs
+      if(showLogs.value) logComponent.value.scrollTop = logComponent.value.scrollHeight
+    })
+
+    return {
+      addFileTroughInput,
+      convert,
+      download,
+      error,
+      gif,
+      isConverting,
+      isReady,
+      isSupported,
+      logComponent,
+      logs,
+      showLogs,
+      video,
+      videoFile,
+    }
+  },
+})
+</script>
