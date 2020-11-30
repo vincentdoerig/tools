@@ -51,6 +51,15 @@
           >
             Select video
           </button>
+
+          <button
+            v-else-if="gif"
+            type="button"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-600 border border-transparent rounded-md shadow-sm disabled:cursor-not-allowed hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 disabled:opacity-50"
+            @click="clear"
+          >
+            Convert new video
+          </button>
           <button
             v-else
             type="button"
@@ -68,7 +77,9 @@
             @change="addFileTroughInput"
           >
         </div>
-        <div class="flex items-center justify-center p-6 bg-white rounded shadow-sm">
+        <div
+          class="flex items-center justify-center p-6 bg-white rounded shadow-sm"
+        >
           <div v-if="isConverting">
             <span class="inline-flex rounded-md shadow-sm">
               <button
@@ -100,7 +111,7 @@
               </button>
             </span>
           </div>
-          <div v-if="gif">
+          <div v-else-if="gif">
             <img
               :src="gif"
               alt="output gif"
@@ -123,33 +134,20 @@
         </div>
       </div>
 
-      <div class="mt-8">
-        <button
-          type="button"
-          class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          @click="showLogs = !showLogs"
-        >
-          <!-- Heroicon name: terminal -->
-          <svg
-            class="w-5 h-5 mr-3"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+      <div class="mt-2">
+        <div class="text-right">
+          <button
+            type="button"
+            class="text-sm font-medium text-gray-600 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            @click="toggleLogs"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          Show logs
-        </button>
+            {{ showLogs ? 'Hide' : 'Show' }} logs
+          </button>
+        </div>
         <pre
           v-if="showLogs"
           ref="logComponent"
-          class="p-4 my-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56"
+          class="p-4 mt-2 mb-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56"
         >{{ logs }}</pre>
       </div>
     </div>
@@ -193,6 +191,14 @@ export default defineComponent({
     }
 
     const showLogs = ref<boolean>(false)
+    const toggleLogs = () => {
+      showLogs.value = !showLogs.value
+      if(showLogs.value) {
+        setTimeout(() => {
+         logComponent.value.scrollTop = logComponent.value.scrollHeight
+      }, 200)
+      }
+    }
 
     const logComponent = ref(null)
     watch(logs, () => {
@@ -200,8 +206,15 @@ export default defineComponent({
       if(showLogs.value) logComponent.value.scrollTop = logComponent.value.scrollHeight
     })
 
+    const clear = () => {
+      videoFile.value = null
+      video.value = null
+      gif.value = null
+    }
+
     return {
       addFileTroughInput,
+      clear,
       convert,
       download,
       error,
@@ -212,6 +225,7 @@ export default defineComponent({
       logComponent,
       logs,
       showLogs,
+      toggleLogs,
       video,
       videoFile,
     }
