@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const { createFFmpeg, fetchFile } = FFmpeg
 export const logs = ref<string>('init')
-const logFFMpeg = ({ message }: { message: string }) => {
+const logger = ({ message }: { message: string }) => {
   const now = new Date()
   const time = now.toTimeString().split(' ')[0]
   const miliseconds = String(now.getMilliseconds()).padStart(3, '0')
@@ -11,8 +11,16 @@ const logFFMpeg = ({ message }: { message: string }) => {
   logs.value += `\n[${time}:${miliseconds}] ${message}`
 }
 
-const ffmpeg = createFFmpeg({ log: false, logger: logFFMpeg })
+const ffmpeg = createFFmpeg({ log: false, logger })
 
+export const progress = ref<number>(0)
+
+ffmpeg.setProgress(({ ratio }) => {
+  /*
+   * ratio is a float number between 0 to 1.
+   */
+  progress.value = ratio
+})
 
 const useFFmpeg = (): any => {
   const isReady = ref<boolean>(false)
