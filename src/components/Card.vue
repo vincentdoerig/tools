@@ -1,7 +1,7 @@
 <template>
   <router-link
     v-if="slug"
-    class="inline-block text-gray-800 border border-gray-700 rounded-lg outline-none bg-next hover:border-gray-400 w-60 focus:ring focus:ring-gray-300"
+    class="inline-block w-full text-gray-800 border border-gray-700 rounded-lg outline-none bg-next hover:border-gray-400 md:w-60 focus:ring focus:ring-gray-300"
     :to="slug"
   >
     <div class="p-4">
@@ -16,7 +16,7 @@
   <a
     v-else
     :href="url"
-    class="relative inline-block text-gray-800 border border-gray-700 rounded-lg outline-none bg-next hover:border-gray-400 w-60 focus:ring focus:ring-gray-300"
+    class="relative inline-block w-full text-gray-800 border border-gray-700 rounded-lg outline-none bg-next hover:border-gray-400 md:w-60 focus:ring focus:ring-gray-300"
     target="_blank"
   >
     <div class="p-4">

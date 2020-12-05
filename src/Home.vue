@@ -2,7 +2,7 @@
   <div class="max-w-5xl mx-auto my-6">
     <div class="flex flex-col items-center justify-center">
       <h1 class="mb-2 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-        Tools
+        Online Toolbox
       </h1>
       <p class="text-center text-gray-600">
         Collection of online tools — No bullshit and straight to the point
@@ -72,7 +72,7 @@ export default defineComponent({
         url: 'https://img.doerig.dev',
         description: 'Quickly upload any image to imgur.com.',
       },
-       {
+      {
         title: 'Video to GIF',
         slug: 'video-to-gif',
         description: 'Online video to gif converter.',

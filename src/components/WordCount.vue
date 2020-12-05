@@ -13,7 +13,7 @@
       autofocus
     />
     <div class="flex flex-col flex-wrap justify-between w-full md:flex-row">
-      <dl class="grid w-full max-w-xl grid-cols-1 mt-5 overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow md:grid-cols-3 md:divide-y-0 md:divide-x">
+      <dl class="grid w-full grid-cols-1 mt-5 overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow md:grid-cols-3 md:divide-y-0 md:divide-x">
         <div>
           <div class="px-4 py-5 sm:p-6">
             <dt class="text-base font-normal text-gray-900">

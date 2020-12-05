@@ -142,6 +142,7 @@
             <button
               type="button"
               class="inline-flex items-center px-4 py-2 text-xs font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm sm:text-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              title="abort current conversion"
               @click="this.$router.go()"
             >
               Abort
@@ -183,7 +184,7 @@
         <pre
           v-if="showLogs"
           ref="logComponent"
-          class="p-4 mt-2 mb-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56"
+          class="px-2 py-1 mt-2 mb-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56"
         >{{ logs }}</pre>
       </div>
     </div>
@@ -205,7 +206,7 @@ export default defineComponent({
     const videoFile = ref<null | Blob>(null)
     const error = ref<string>('')
 
-    const { isReady, convert, gif, isConverting, isSupported } = useFFmpeg()
+    const { isReady, convert, clearGIF, gif, isConverting, isSupported } = useFFmpeg()
 
     const addFileTroughInput = (e: Event) => {
       error.value = ''
@@ -227,30 +228,33 @@ export default defineComponent({
       image.click()
     }
 
+    const handleLogScroll = () => {
+      logComponent.value.scrollTop = logComponent.value.scrollHeight
+    }
+
     const showLogs = ref<boolean>(false)
     const toggleLogs = () => {
       showLogs.value = !showLogs.value
       if(showLogs.value) {
-        setTimeout(() => {
-         logComponent.value.scrollTop = logComponent.value.scrollHeight
-      }, 200)
+        // scrolls to the bottom of the logs
+        setTimeout(() => handleLogScroll(), 100)
       }
     }
 
     const logComponent = ref(null)
     watch(logs, () => {
       // scroll to end of logs
-      if(showLogs.value) logComponent.value.scrollTop = logComponent.value.scrollHeight
+      if(showLogs.value) handleLogScroll()
     })
-
-    // const estimatedTimeLeft = computed(() => )
+    watch(isReady, () => {
+      console.log(isReady.value)
+    })
 
     const clear = () => {
       error.value = ''
       videoFile.value = null
       video.value = null
-      gif.value = null
-      isReady.value = true
+      clearGIF()
     }
 
     return {

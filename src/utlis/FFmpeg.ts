@@ -55,8 +55,13 @@ const useFFmpeg = (): any => {
     isConverting.value = false
   }
 
+  const clearGIF = () => {
+    gif.value = null
+  }
+
   return {
     convert,
+    clearGIF,
     gif,
     isConverting,
     isReady,
