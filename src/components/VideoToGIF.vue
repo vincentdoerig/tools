@@ -195,7 +195,7 @@
 import { defineComponent, ref, watch } from 'vue'
 
 import ToolsComponent from './ToolsComponent.vue'
-import useFFmpeg, { logs, progress } from '../utlis/FFmpeg'
+import useFFmpeg, { logs, progress } from '../utils/FFmpeg'
 
 export default defineComponent({
   components: {
