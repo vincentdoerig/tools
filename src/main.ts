@@ -9,12 +9,14 @@ import Hello from './components/HelloWorld.vue'
 import VideoToGIF from './components/VideoToGIF.vue'
 import WordCount from './components/WordCount.vue'
 import Date from './components/Date.vue'
+import Arrows from './components/Arrows.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/word-count', component: WordCount },
   { path: '/date', component: Date },
   { path: '/video-to-gif', component: VideoToGIF },
+  { path: '/arrows', component: Arrows },
   { path: '/hello', component: Hello },
 ]
 

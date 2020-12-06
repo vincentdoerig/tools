@@ -78,6 +78,11 @@ export default defineComponent({
         description: 'Online video to gif converter.',
       },
       {
+        title: 'Arrows',
+        slug: 'arrows',
+        description: 'Quickly copy and paste arrows.',
+      },
+      {
         title: 'More coming soon™...',
         slug: '/',
         description: '',
