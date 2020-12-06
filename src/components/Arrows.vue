@@ -41,15 +41,21 @@
       </div>
     </transition>
 
-    <div class="flex flex-wrap w-full text-xl text-blue-900 md:text-5xl flex-cols">
+    <Search
+      :to-search="arrows"
+      class="mb-8"
+      @results-change="updateResults"
+    />
+
+    <div class="flex flex-wrap justify-center w-full text-xl text-blue-900 md:text-5xl flex-cols">
       <button
-        v-for="arrow in arrows"
-        :key="arrow.title"
-        class="flex items-center justify-center w-12 h-12 p-2 transition transform bg-blue-200 border border-blue-800 cursor-pointer md:w-20 md:h-20 hover:scale-110 hover:z-10 focus:z-10 focus:scale-125 hover:text-blue-100 hover:bg-blue-900"
-        :title="arrow.title"
-        @click="copy(arrow.value)"
+        v-for="arrow in allArrows"
+        :key="arrow.item ? arrow.item.title : arrow.title"
+        :title="arrow.item ? arrow.item.title : arrow.title"
+        class="flex items-center justify-center w-12 h-12 p-2 transition transform bg-blue-200 border border-blue-800 cursor-pointer md:w-20 md:h-20 hover:scale-110 hover:z-10 focus:z-10 focus:scale-125 hover:text-blue-100 hover:bg-blue-900 "
+        @click="copy(arrow.item ? arrow.item.value : arrow.value)"
       >
-        {{ arrow.value }}
+        {{ arrow.item ? arrow.item.value : arrow.value }}
       </button>
     </div>
   </ToolsComponent>
@@ -60,13 +66,16 @@ import { defineComponent, ref } from 'vue'
 import { toClipboard } from '@soerenmartius/vue3-clipboard'
 
 import ToolsComponent from './ToolsComponent.vue'
+import Search from './Search.vue'
 import arrows from '../utils/arrows'
 
 export default defineComponent({
   components: {
     ToolsComponent,
+    Search,
   },
   setup() {
+    const allArrows = ref(arrows)
 
     const copy = (value: string) => {
       toClipboard(value).then(() => {
@@ -83,7 +92,12 @@ export default defineComponent({
       }, 2000)
     }
 
-    return { arrows, onSuccess, copySuccess, toClipboard, copy }
+    const updateResults = (newResults) => {
+      allArrows.value = newResults
+      console.log(newResults)
+    }
+
+    return { arrows, onSuccess, copySuccess, toClipboard, copy, updateResults, allArrows }
   },
 })
 </script>
