@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 pt-4 mx-auto md:pt-8 max-w-7xl sm:px-6 lg:px-8">
+  <div class="px-4 pt-4 mx-auto mb-8 md:pt-8 max-w-7xl sm:px-6 lg:px-8">
     <nav
       v-if="$route.path !== '/'"
       class="text-xs sm:text-sm"
