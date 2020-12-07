@@ -29,11 +29,15 @@ export default defineComponent({
       type: Array,
       default: () => [],
     },
+    searchKeys: {
+      type: Array,
+      default: () => [],
+    },
   },
   emits: ['results-change'],
   setup(props, { emit }) {
     const fuse = new Fuse(props.toSearch, {
-      keys: ['value', 'name', 'category'],
+      keys: props.searchKeys,
     })
 
     const searchTerm = ref('')

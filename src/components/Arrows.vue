@@ -1,7 +1,7 @@
 <template>
   <ToolsComponent
     title="Arrows"
-    description="Click to copy."
+    description="Find the arrow you need. Click to copy. Some arrows might not display correctly/differently."
   >
     <transition
       enter-active-class="transition duration-100 ease-out"
@@ -43,16 +43,23 @@
 
     <Search
       :to-search="arrows"
+      :search-keys="[
+        'value',
+        { name: 'name', weight: 2 },
+        { name: 'alt', weight: 0.8 },
+      ]"
       class="mb-8"
       @results-change="updateResults"
     />
 
-    <div class="flex flex-wrap justify-center w-full text-xl text-blue-900 md:text-5xl flex-cols">
+    <div
+      class="flex flex-wrap w-full text-xl text-blue-900 md:text-5xl flex-cols"
+    >
       <button
         v-for="arrow in allArrows"
         :key="arrow.item ? arrow.item.title : arrow.title"
         :title="arrow.item ? arrow.item.title : arrow.title"
-        class="flex items-center justify-center w-12 h-12 p-2 transition transform bg-blue-200 border border-blue-800 cursor-pointer md:w-20 md:h-20 hover:scale-110 hover:z-10 focus:z-10 focus:scale-125 hover:text-blue-100 hover:bg-blue-900 "
+        class="flex items-center justify-center w-12 h-12 p-2 transition transform bg-blue-200 border border-blue-800 cursor-pointer md:w-20 md:h-20 hover:scale-110 hover:z-10 focus:z-10 focus:scale-125 hover:text-blue-100 hover:bg-blue-900"
         @click="copy(arrow.item ? arrow.item.value : arrow.value)"
       >
         {{ arrow.item ? arrow.item.value : arrow.value }}
@@ -69,21 +76,36 @@ import ToolsComponent from './ToolsComponent.vue'
 import Search from './Search.vue'
 import arrows from '../utils/arrows'
 
+interface Arrow {
+  value: string;
+  unicode: string;
+  name: string;
+  category: string;
+  alt?: string;
+}
+
 export default defineComponent({
   components: {
     ToolsComponent,
     Search,
   },
   setup() {
-    const allArrows = ref(arrows)
+    const allArrows = ref<Arrow[]>(arrows)
 
     const copy = (value: string) => {
-      toClipboard(value).then(() => {
-        onSuccess()
-      }).catch(error => {
-        console.log(`copy error: ${error}`)
-      })
+      toClipboard(value)
+        .then(() => {
+          onSuccess()
+        })
+        .catch((error) => {
+          console.log(`copy error: ${error}`)
+        })
     }
+
+    const updateResults = (newResults: Arrow[]) => {
+      allArrows.value = newResults
+    }
+
     const copySuccess = ref<boolean>(false)
     const onSuccess = () => {
       copySuccess.value = true
@@ -92,12 +114,15 @@ export default defineComponent({
       }, 2000)
     }
 
-    const updateResults = (newResults) => {
-      allArrows.value = newResults
-      console.log(newResults)
+    return {
+      allArrows,
+      arrows,
+      copy,
+      copySuccess,
+      onSuccess,
+      toClipboard,
+      updateResults,
     }
-
-    return { arrows, onSuccess, copySuccess, toClipboard, copy, updateResults, allArrows }
   },
 })
 </script>
