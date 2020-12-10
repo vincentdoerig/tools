@@ -1,30 +1,36 @@
 <template>
   <div class="max-w-5xl mx-auto my-6">
     <div class="flex flex-col items-center justify-center">
-      <h1 class="mb-2 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+      <h1
+        class="mb-2 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl"
+      >
         Online Toolbox
       </h1>
       <p class="text-center text-gray-600">
         Collection of online tools — No bullshit and straight to the point
       </p>
       <p class="text-center text-gray-600">
-        Made by <a
+        Made by
+        <a
           class="font-medium text-black underline hover:text-gray-800"
           href="https://doerig.dev"
-        >@vincentdoerig</a>. Open Source on <a
+        >@vincentdoerig</a>. Open Source on
+        <a
           class="font-medium text-black underline hover:text-gray-800"
           href="https://github.com/vincentdoerig/tools"
         >GitHub</a>.
       </p>
-      <div class="grid grid-cols-none gap-4 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div
+        class="grid grid-cols-none gap-4 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
         <template
           v-for="card in cards"
           :key="card.slug"
         >
           <Card
             :title="card.title"
-            :slug="card.slug"
-            :url="card.url"
+            :slug="card.link.type === 'slug' ? card.link.data : ''"
+            :url="card.link.type === 'url' ? card.link.data : ''"
             :description="card.description"
             :class="card.class || ''"
           />
@@ -34,11 +40,28 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 import Card from './components/Card.vue'
+
+enum CATEGORY {
+  Characters = 'characters',
+}
+enum URLType {
+  Url = 'url',
+  Slug = 'slug',
+}
+interface Card {
+  title: string;
+  link?: {
+    type: URLType;
+    data: string;
+  };
+  description: string;
+  category?: CATEGORY;
+  class?: string;
+}
 
 export default defineComponent({
   components: {
@@ -46,45 +69,69 @@ export default defineComponent({
   },
 
   setup() {
-    const cards = [
+    const cards: Card[] = [
       {
         title: 'Hello World',
-        slug: 'hello',
+        link: {
+          type: URLType.Slug,
+          data: 'hello',
+        },
         description: '👋',
       },
       {
         title: 'Word Count',
-        slug: 'word-count',
+        link: {
+          type: URLType.Slug,
+          data: 'word-count',
+        },
         description: 'Count all your words.',
       },
       {
         title: 'Date',
-        slug: 'date',
+        link: {
+          type: URLType.Slug,
+          data: 'date',
+        },
         description: 'ISO, UTC, week, local time, etc.',
       },
       {
         title: 'Stopwatch',
-        url: 'https://gymtimer.io',
+        link: {
+          type: URLType.Url,
+          data: 'https://gymtimer.io',
+        },
         description: 'Stopwatch with an integrated break timer.',
       },
       {
         title: 'Imgur Image Uploader',
-        url: 'https://img.doerig.dev',
+        link: {
+          type: URLType.Url,
+          data: 'https://img.doerig.dev',
+        },
         description: 'Quickly upload any image to imgur.com.',
       },
       {
         title: 'Video to GIF',
-        slug: 'video-to-gif',
+        link: {
+          type: URLType.Slug,
+          data: 'video-to-gif',
+        },
         description: 'Online video to gif converter.',
       },
       {
         title: 'Arrows',
-        slug: 'arrows',
+        link: {
+          type: URLType.Slug,
+          data: 'arrows',
+        },
         description: 'Quickly copy and paste arrows.',
       },
       {
         title: 'More coming soon™...',
-        slug: '/',
+        link: {
+          type: URLType.Slug,
+          data: '/',
+        },
         description: '',
         class: 'opacity-75 bg-gradient-to-r from-blue-50 to-red-100',
       },
