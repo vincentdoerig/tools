@@ -14,7 +14,7 @@ export default [
   {
     value: '→',
     unicode: 'U+2192',
-    name: 'RIGHTWARDS ARROW = z notation total function',
+    name: 'RIGHTWARDS ARROW',
     category: 'Simple arrows',
   },
   {
@@ -26,7 +26,7 @@ export default [
   {
     value: '↔',
     unicode: 'U+2194',
-    name: 'LEFT RIGHT ARROW = z notation relation',
+    name: 'LEFT RIGHT ARROW',
     category: 'Simple arrows',
   },
   {
@@ -87,13 +87,13 @@ export default [
   {
     value: '↞',
     unicode: 'U+219E',
-    name: 'LEFTWARDS TWO HEADED ARROW = fast cursor left',
+    name: 'LEFTWARDS TWO HEADED ARROW',
     category: 'Arrows with modifications',
   },
   {
     value: '↟',
     unicode: 'U+219F',
-    name: 'UPWARDS TWO HEADED ARROW = fast cursor up',
+    name: 'UPWARDS TWO HEADED ARROW',
     category: 'Arrows with modifications',
   },
   {
@@ -102,13 +102,13 @@ export default [
     alt: 'cursor, right',
 
     name:
-      'RIGHTWARDS TWO HEADED ARROW = z notation total surjection = fast ',
+      'RIGHTWARDS TWO HEADED ARROW',
     category: 'Arrows with modifications',
   },
   {
     value: '↡',
     unicode: 'U+21A1',
-    name: 'DOWNWARDS TWO HEADED ARROW = form feed = fast cursor down',
+    name: 'DOWNWARDS TWO HEADED ARROW',
     category: 'Arrows with modifications',
   },
   {
@@ -120,7 +120,7 @@ export default [
   {
     value: '↣',
     unicode: 'U+21A3',
-    name: 'RIGHTWARDS ARROW WITH TAIL = z notation total injection',
+    name: 'RIGHTWARDS ARROW WITH TAIL',
     category: 'Arrows with modifications',
   },
   {
@@ -138,13 +138,14 @@ export default [
   {
     value: '↦',
     unicode: 'U+21A6',
-    name: 'RIGHTWARDS ARROW FROM BAR = z notation maplet',
+    name: 'RIGHTWARDS ARROW FROM BAR',
     category: 'Arrows with modifications',
   },
   {
     value: '↧',
     unicode: 'U+21A7',
-    name: 'DOWNWARDS ARROW FROM BAR = depth symbol',
+    alt: 'depth',
+    name: 'DOWNWARDS ARROW FROM BAR',
     category: 'Arrows with modifications',
   },
   {
@@ -192,7 +193,7 @@ export default [
   {
     value: '↯',
     unicode: 'U+21AF',
-    name: 'DOWNWARDS ZIGZAG ARROW = electrolysis',
+    name: 'DOWNWARDS ZIGZAG ARROW',
     category: 'Arrows with modifications',
   },
 
@@ -224,7 +225,8 @@ export default [
   {
     value: '↴',
     unicode: 'U+21B4',
-    name: 'RIGHTWARDS ARROW WITH CORNER DOWNWARDS = line feed',
+    alt: 'line feed',
+    name: 'RIGHTWARDS ARROW WITH CORNER DOWNWARDS',
     category: 'Keyboard symbols and circle arrows',
   },
   {
@@ -248,16 +250,17 @@ export default [
   {
     value: '↸',
     unicode: 'U+21B8',
-    name: 'NORTH WEST ARROW TO LONG BAR = home',
+    alt: 'home',
+    name: 'NORTH WEST ARROW TO LONG BAR',
     category: 'Keyboard symbols and circle arrows',
   },
   {
     value: '↹',
     unicode: 'U+21B9',
 
-    alt: 'tab',
+    alt: 'tab, tab with shift',
     name:
-      'LEFTWARDS ARROW TO BAR OVER RIGHTWARDS ARROW TO BAR = tab with shift ',
+      'LEFTWARDS ARROW TO BAR OVER RIGHTWARDS ARROW TO BAR',
     category: 'Keyboard symbols and circle arrows',
   },
   {
@@ -483,13 +486,15 @@ export default [
   {
     value: '⇞',
     unicode: 'U+21DE',
-    name: 'UPWARDS ARROW WITH DOUBLE STROKE = page up',
+    alt: 'page up',
+    name: 'UPWARDS ARROW WITH DOUBLE STROKE',
     category: 'Miscellaneous arrows and keyboard symbols',
   },
   {
     value: '⇟',
     unicode: 'U+21DF',
-    name: 'DOWNWARDS ARROW WITH DOUBLE STROKE = page down',
+    alt: 'page down',
+    name: 'DOWNWARDS ARROW WITH DOUBLE STROKE',
     category: 'Miscellaneous arrows and keyboard symbols',
   },
   {
@@ -519,13 +524,15 @@ export default [
   {
     value: '⇤',
     unicode: 'U+21E4',
-    name: 'LEFTWARDS ARROW TO BAR = leftward tab',
+    alt: 'leftward tab',
+    name: 'LEFTWARDS ARROW TO BAR',
     category: 'Miscellaneous arrows and keyboard symbols',
   },
   {
     value: '⇥',
     unicode: 'U+21E5',
-    name: 'RIGHTWARDS ARROW TO BAR = rightward tab',
+    alt: 'rightward tab',
+    name: 'RIGHTWARDS ARROW TO BAR',
     category: 'Miscellaneous arrows and keyboard symbols',
   },
 
@@ -538,13 +545,14 @@ export default [
   {
     value: '⇧',
     unicode: 'U+21E7',
-    name: 'UPWARDS WHITE ARROW = shift = level 2 select (ISO 9995-7)',
+    alt: 'shift',
+    name: 'UPWARDS WHITE ARROW',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇨',
     unicode: 'U+21E8',
-    name: 'RIGHTWARDS WHITE ARROW = group select (ISO 9995-7)',
+    name: 'RIGHTWARDS WHITE ARROW',
     category: 'White arrows and keyboard symbols',
   },
   {
@@ -556,13 +564,14 @@ export default [
   {
     value: '⇪',
     unicode: 'U+21EA',
-    name: 'UPWARDS WHITE ARROW FROM BAR = caps lock',
+    alt: 'caps lock',
+    name: 'UPWARDS WHITE ARROW FROM BAR',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇫',
     unicode: 'U+21EB',
-    name: 'UPWARDS WHITE ARROW ON PEDESTAL = level 2 lock',
+    name: 'UPWARDS WHITE ARROW ON PEDESTAL',
     category: 'White arrows and keyboard symbols',
   },
   {
@@ -570,50 +579,54 @@ export default [
     unicode: 'U+21EC',
     alt: 'lock',
     name:
-      'UPWARDS WHITE ARROW ON PEDESTAL WITH HORIZONTAL BAR = capitals (caps) ',
+      'UPWARDS WHITE ARROW ON PEDESTAL WITH HORIZONTAL BAR',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇭',
     unicode: 'U+21ED',
+    alt: 'numeric lock',
     name:
-      'UPWARDS WHITE ARROW ON PEDESTAL WITH VERTICAL BAR = numeric lock',
+      'UPWARDS WHITE ARROW ON PEDESTAL WITH VERTICAL BAR',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇮',
     unicode: 'U+21EE',
-    name: 'UPWARDS WHITE DOUBLE ARROW = level 3 select',
+    name: 'UPWARDS WHITE DOUBLE ARROW',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇯',
     unicode: 'U+21EF',
-    name: 'UPWARDS WHITE DOUBLE ARROW ON PEDESTAL = level 3 lock',
+    name: 'UPWARDS WHITE DOUBLE ARROW ON PEDESTAL',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇰',
     unicode: 'U+21F0',
-    name: 'RIGHTWARDS WHITE ARROW FROM WALL = group lock',
+    name: 'RIGHTWARDS WHITE ARROW FROM WALL',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇱',
     unicode: 'U+21F1',
-    name: 'NORTH WEST ARROW TO CORNER = home',
+    alt: 'home',
+    name: 'NORTH WEST ARROW TO CORNER',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇲',
     unicode: 'U+21F2',
-    name: 'SOUTH EAST ARROW TO CORNER = end',
+    alt: 'end',
+    name: 'SOUTH EAST ARROW TO CORNER',
     category: 'White arrows and keyboard symbols',
   },
   {
     value: '⇳',
     unicode: 'U+21F3',
-    name: 'UP DOWN WHITE ARROW = scrolling',
+    alt: 'scrolling',
+    name: 'UP DOWN WHITE ARROW',
     category: 'White arrows and keyboard symbols',
   },
 
@@ -645,14 +658,14 @@ export default [
     value: '⇸',
     unicode: 'U+21F8',
     name:
-      'RIGHTWARDS ARROW WITH VERTICAL STROKE = z notation partial function',
+      'RIGHTWARDS ARROW WITH VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
     value: '⇹',
     unicode: 'U+21F9',
     name:
-      'LEFT RIGHT ARROW WITH VERTICAL STROKE = z notation partial relation',
+      'LEFT RIGHT ARROW WITH VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
@@ -666,7 +679,7 @@ export default [
     unicode: 'U+21FB',
     alt: 'function',
     name:
-      'RIGHTWARDS ARROW WITH DOUBLE VERTICAL STROKE = z notation finite ',
+      'RIGHTWARDS ARROW WITH DOUBLE VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
@@ -674,7 +687,7 @@ export default [
     unicode: 'U+21FC',
     alt: 'relation',
     name:
-      'LEFT RIGHT ARROW WITH DOUBLE VERTICAL STROKE = z notation finite ',
+      'LEFT RIGHT ARROW WITH DOUBLE VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
@@ -1002,13 +1015,15 @@ export default [
   {
     value: '⟻',
     unicode: 'U+27FB',
-    name: 'LONG LEFTWARDS ARROW FROM BAR = maps from',
+    alt: 'maps from',
+    name: 'LONG LEFTWARDS ARROW FROM BAR',
     category: 'Long arrows',
   },
   {
     value: '⟼',
     unicode: 'U+27FC',
-    name: 'LONG RIGHTWARDS ARROW FROM BAR = maps to',
+    alt: 'maps to',
+    name: 'LONG RIGHTWARDS ARROW FROM BAR',
     category: 'Long arrows',
   },
   {
@@ -1035,7 +1050,7 @@ export default [
     unicode: 'U+2900',
     alt: 'surjection',
     name:
-      'RIGHTWARDS TWO-HEADED ARROW WITH VERTICAL STROKE = z notation partial ',
+      'RIGHTWARDS TWO-HEADED ARROW WITH VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
@@ -1043,7 +1058,7 @@ export default [
     unicode: 'U+2901',
     alt: 'finite surjection',
     name:
-      'RIGHTWARDS TWO-HEADED ARROW WITH DOUBLE VERTICAL STROKE = z notation ',
+      'RIGHTWARDS TWO-HEADED ARROW WITH DOUBLE VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
@@ -1067,19 +1082,22 @@ export default [
   {
     value: '⤅',
     unicode: 'U+2905',
-    name: 'RIGHTWARDS TWO-HEADED ARROW FROM BAR = maps to',
+    alt: 'maps to',
+    name: 'RIGHTWARDS TWO-HEADED ARROW FROM BAR',
     category: 'Miscellaneous arrows',
   },
   {
     value: '⤆',
     unicode: 'U+2906',
-    name: 'LEFTWARDS DOUBLE ARROW FROM BAR = maps from',
+    alt: 'maps from',
+    name: 'LEFTWARDS DOUBLE ARROW FROM BAR',
     category: 'Miscellaneous arrows',
   },
   {
     value: '⤇',
     unicode: 'U+2907',
-    name: 'RIGHTWARDS DOUBLE ARROW FROM BAR = maps to',
+    alt: 'maps to',
+    name: 'RIGHTWARDS DOUBLE ARROW FROM BAR',
     category: 'Miscellaneous arrows',
   },
   {
@@ -1159,7 +1177,7 @@ export default [
     unicode: 'U+2914',
     alt: 'injection',
     name:
-      'RIGHTWARDS ARROW WITH TAIL WITH VERTICAL STROKE = z notation partial',
+      'RIGHTWARDS ARROW WITH TAIL WITH VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
@@ -1167,22 +1185,22 @@ export default [
     unicode: 'U+2915',
     alt: 'finite injection',
     name:
-      'RIGHTWARDS ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE = z notation',
+      'RIGHTWARDS ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
     value: '⤖',
     unicode: 'U+2916',
-    alt: 'bijection',
+    alt: 'bijection, bijective mapping',
     name:
-      'RIGHTWARDS TWO-HEADED ARROW WITH TAIL = bijective mapping = z notation',
+      'RIGHTWARDS TWO-HEADED ARROW WITH TAI',
     category: 'Miscellaneous arrows',
   },
   {
     value: '⤗',
     unicode: 'U+2917',
     alt: 'notation surjective injection',
-    name: 'RIGHTWARDS TWO-HEADED ARROW WITH TAIL WITH VERTICAL STROKE = z',
+    name: 'RIGHTWARDS TWO-HEADED ARROW WITH TAIL WITH VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
   {
@@ -1190,7 +1208,7 @@ export default [
     unicode: 'U+2918',
     alt: 'notation finite surjective injection',
     name:
-      'RIGHTWARDS TWO-HEADED ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE = z',
+      'RIGHTWARDS TWO-HEADED ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE',
     category: 'Miscellaneous arrows',
   },
 

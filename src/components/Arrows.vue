@@ -48,6 +48,7 @@
         { name: 'name', weight: 2 },
         { name: 'alt', weight: 0.8 },
       ]"
+      name="arrows"
       class="mb-8"
       @results-change="updateResults"
     />
@@ -57,8 +58,8 @@
     >
       <button
         v-for="arrow in allArrows"
-        :key="arrow.item ? arrow.item.title : arrow.title"
-        :title="arrow.item ? arrow.item.title : arrow.title"
+        :key="arrow.item ? arrow.item.name : arrow.name"
+        :title="arrow.item ? arrow.item.name : arrow.name"
         class="flex items-center justify-center w-12 h-12 p-2 transition transform bg-blue-200 border border-blue-800 cursor-pointer md:w-20 md:h-20 hover:scale-110 hover:z-10 focus:z-10 focus:scale-125 hover:text-blue-100 hover:bg-blue-900"
         @click="copy(arrow.item ? arrow.item.value : arrow.value)"
       >
