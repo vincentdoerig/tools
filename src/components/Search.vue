@@ -11,7 +11,7 @@
         type="search"
         name="search"
         class="block w-full max-w-sm border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-        placeholder="Find arrows..."
+        :placeholder="`Find ${name}...`"
         autocomplete="off"
       >
     </div>
@@ -25,6 +25,10 @@ import Fuse from 'fuse.js'
 export default defineComponent({
 
   props: {
+    name: {
+      type: String,
+      default: 'anything',
+    },
     toSearch: {
       type: Array,
       default: () => [],
