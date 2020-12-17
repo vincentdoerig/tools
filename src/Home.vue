@@ -1,22 +1,22 @@
 <template>
   <div class="max-w-5xl mx-auto my-6">
-    <div class="flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center text-gray-600 dark:text-gray-400">
       <h1
-        class="mb-2 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl"
+        class="mb-2 text-4xl font-extrabold text-gray-900 dark:text-gray-100 sm:text-5xl sm:tracking-tight lg:text-6xl"
       >
         Online Toolbox
       </h1>
-      <p class="text-center text-gray-600">
+      <p class="text-center">
         Collection of online tools — No bullshit and straight to the point
       </p>
-      <p class="text-center text-gray-600">
+      <p class="text-center">
         Made by
         <a
-          class="font-medium text-black underline hover:text-gray-800"
+          class="font-medium text-black underline hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
           href="https://doerig.dev"
         >@vincentdoerig</a>. Open Source on
         <a
-          class="font-medium text-black underline hover:text-gray-800"
+          class="font-medium underline ext-black hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
           href="https://github.com/vincentdoerig/tools"
         >GitHub</a>.
       </p>
@@ -143,7 +143,7 @@ export default defineComponent({
           data: '/',
         },
         description: '',
-        class: 'opacity-75 bg-gradient-to-r from-blue-50 to-red-100',
+        class: 'opacity-75 bg-gradient-to-r from-blue-50 to-red-100 dark:from-black dark:to-gray-800',
       },
     ]
 

@@ -7,16 +7,16 @@
       ref="textarea"
       v-model="words"
       name="textarea"
-      class="w-full rounded-md"
+      class="w-full rounded-md dark:bg-black dark:text-gray-100"
       rows="10"
       placeholder="Start typing or paste your text..."
       autofocus
     />
     <div class="flex flex-col flex-wrap justify-between w-full md:flex-row">
-      <dl class="grid w-full grid-cols-1 mt-5 overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow md:grid-cols-3 md:divide-y-0 md:divide-x">
+      <dl class="grid w-full grid-cols-1 mt-5 overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow dark:divide-gray-800 dark:bg-black md:grid-cols-3 md:divide-y-0 md:divide-x">
         <div>
           <div class="px-4 py-5 sm:p-6">
-            <dt class="text-base font-normal text-gray-900">
+            <dt class="text-base font-normal text-gray-900 dark:text-gray-100">
               Words
             </dt>
             <dd class="flex items-baseline justify-between mt-1 md:block lg:flex">
@@ -35,7 +35,7 @@
 
         <div>
           <div class="px-4 py-5 sm:p-6">
-            <dt class="text-base font-normal text-gray-900">
+            <dt class="text-base font-normal text-gray-900 dark:text-gray-100">
               Characters
             </dt>
             <dd class="flex items-baseline justify-between mt-1 md:block lg:flex">
@@ -54,11 +54,11 @@
 
         <div>
           <div class="px-4 py-5 sm:p-6">
-            <dt class="text-base font-normal text-gray-900">
+            <dt class="text-base font-normal text-gray-900 dark:text-gray-100">
               Sentences
             </dt>
             <dd class="flex items-baseline justify-between mt-1 md:block lg:flex">
-              <div class="flex items-baseline text-2xl font-semibold text-green-600">
+              <div class="flex items-baseline text-2xl font-semibold text-green-600 dark:text-green-400">
                 {{ selection.sentences || stats.sentences }}
                 <span
                   v-if="selection.characters"

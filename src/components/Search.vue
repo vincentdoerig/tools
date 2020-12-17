@@ -2,7 +2,7 @@
   <div>
     <label
       for="search"
-      class="block text-sm font-medium text-gray-700"
+      class="block text-sm font-medium text-gray-700 dark:text-gray-300"
     >Search</label>
     <div class="mt-1">
       <input
@@ -10,7 +10,7 @@
         v-model="searchTerm"
         type="search"
         name="search"
-        class="block w-full max-w-sm border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        class="block w-full max-w-sm border-gray-300 rounded-md shadow-sm dark:border-gray-700 focus:ring-blue-500 focus:border-blue-500 sm:text-sm dark:bg-black dark:text-gray-100"
         :placeholder="`Find ${name}...`"
         autocomplete="off"
       >

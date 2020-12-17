@@ -2,6 +2,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  darkMode: 'class',
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: ['./index.html', './src/**/*.vue', './src/**/*.ts'],
@@ -11,9 +12,20 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      typography: (theme) => ({
+        dark: {
+          css: {
+            color: theme('colors.gray.300'),
+            thead: {
+              color: theme('colors.gray.200'),
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
+    typography: ['dark'],
     extend: {
       opacity: ['disabled'],
       cursor: ['disabled'],

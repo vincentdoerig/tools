@@ -61,7 +61,7 @@
       </div>
       <div class="grid grid-cols-none gap-4 sm:grid-cols-2">
         <div
-          class="flex flex-col items-center justify-center p-6 bg-white rounded shadow-sm"
+          class="flex flex-col items-center justify-center p-6 bg-white rounded shadow-sm dark:bg-black"
         >
           <video
             v-if="video"
@@ -106,7 +106,7 @@
           >
         </div>
         <div
-          class="flex items-center justify-center p-6 bg-white rounded shadow-sm"
+          class="flex items-center justify-center p-6 bg-white rounded shadow-sm dark:bg-black"
         >
           <div
             v-if="isConverting"
@@ -164,7 +164,7 @@
           </div>
           <div
             v-else
-            class="text-gray-600"
+            class="text-gray-600 dark:text-gray-400"
           >
             Your GIF will appear here.
           </div>
@@ -175,7 +175,7 @@
         <div class="text-right">
           <button
             type="button"
-            class="text-sm font-medium text-gray-600 border border-transparent rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            class="text-sm font-medium text-gray-600 border border-transparent rounded dark:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             @click="toggleLogs"
           >
             {{ showLogs ? 'Hide' : 'Show' }} logs
@@ -184,7 +184,7 @@
         <pre
           v-if="showLogs"
           ref="logComponent"
-          class="px-2 py-1 mt-2 mb-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56"
+          class="px-2 py-1 mt-2 mb-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56 dark:bg-gray-900 dark:text-gray-300"
         >{{ logs }}</pre>
       </div>
     </div>
@@ -204,7 +204,7 @@ export default defineComponent({
   setup() {
     const video = ref<null | string>(null)
     const videoFile = ref<null | Blob>(null)
-    const error = ref<string>('')
+    const error = ref('')
 
     const { isReady, convert, clearGIF, gif, isConverting, isSupported } = useFFmpeg()
 

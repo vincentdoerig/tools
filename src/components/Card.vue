@@ -1,14 +1,14 @@
 <template>
   <router-link
     v-if="slug"
-    class="inline-block w-full text-gray-800 border border-gray-700 rounded-lg outline-none bg-next hover:border-gray-400 md:w-60 focus:ring focus:ring-gray-300"
+    class="inline-block w-full text-gray-800 border border-gray-700 rounded-lg outline-none dark:border-gray-300 dark:text-gray-200 dark:hover:border-gray-400 hover:border-gray-400 md:w-60 focus:ring focus:ring-gray-300"
     :to="slug"
   >
     <div class="p-4">
       <h4 class="font-semibold">
         {{ title }}
       </h4>
-      <div class="inline-flex py-2 text-sm text-gray-600">
+      <div class="inline-flex py-2 text-sm text-gray-600 dark:text-gray-400">
         {{ description }}
       </div>
     </div>
@@ -16,7 +16,7 @@
   <a
     v-else
     :href="url"
-    class="relative inline-block w-full text-gray-800 border border-gray-700 rounded-lg outline-none bg-next hover:border-gray-400 md:w-60 focus:ring focus:ring-gray-300"
+    class="relative inline-block w-full text-gray-800 border border-gray-700 rounded-lg outline-none dark:border-gray-300 dark:text-gray-200 dark:hover:border-gray-400 hover:border-gray-400 md:w-60 focus:ring focus:ring-gray-300"
     target="_blank"
   >
     <div class="p-4">
@@ -37,7 +37,7 @@
       <h4 class="font-semibold">
         {{ title }}
       </h4>
-      <div class="inline-flex py-2 text-sm text-gray-600">
+      <div class="inline-flex py-2 text-sm text-gray-600 dark:text-gray-400">
         {{ description }}
       </div>
     </div>

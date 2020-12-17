@@ -48,7 +48,7 @@
     >
       Refresh dates
     </button>
-    <div class="prose max-w-none">
+    <div class="prose max-w-none dark:prose-dark">
       <table>
         <thead>
           <tr>
