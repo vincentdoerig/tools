@@ -52,6 +52,7 @@ enum URLType {
   Url = 'url',
   Slug = 'slug',
 }
+// type Link = 'slug' | 'url'
 interface Card {
   title: string;
   link?: {
@@ -61,6 +62,7 @@ interface Card {
   description: string;
   category?: CATEGORY;
   class?: string;
+  // [key: Link]: string; // could maybe work with TS index signature in the future
 }
 
 export default defineComponent({
@@ -125,6 +127,14 @@ export default defineComponent({
           data: 'arrows',
         },
         description: 'Quickly copy and paste arrows.',
+      },
+      {
+        title: 'Glyphs',
+        link: {
+          type: URLType.Slug,
+          data: 'glyphs',
+        },
+        description: 'Find, copy and paste commonly used glyphs.',
       },
       {
         title: 'More coming soon™...',
