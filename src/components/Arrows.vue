@@ -2,6 +2,7 @@
   <ToolsComponent
     title="Arrows"
     description="Find the arrow you need. Click to copy. Some arrows might not display correctly/differently."
+    :related="[{ name: 'Glyphs', link: 'glyphs' }]"
   >
     <transition
       enter-active-class="transition duration-100 ease-out"
