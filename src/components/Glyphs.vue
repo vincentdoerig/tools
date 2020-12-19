@@ -55,13 +55,13 @@
     />
 
     <div
-      class="flex flex-wrap w-full text-xl text-blue-900 md:text-5xl flex-cols"
+      class="flex flex-wrap w-full text-4xl text-blue-800 dark:text-blue-200 flex-cols"
     >
       <button
         v-for="glyph in allGlyphs"
         :key="glyph.item ? glyph.item.name : glyph.name"
         :title="glyph.item ? glyph.item.name : glyph.name"
-        class="flex items-center justify-center w-12 h-12 p-2 transition transform bg-blue-200 border border-blue-800 cursor-pointer md:w-20 md:h-20 hover:scale-110 hover:z-10 focus:z-10 focus:scale-125 hover:text-blue-100 hover:bg-blue-900"
+        class="flex items-center justify-center w-20 h-20 transition transform border border-gray-300 cursor-pointer focus:ring focus:ring-blue-800 dark:focus:ring-blue-200 focus:scale-125 hover:text-blue-100 hover:bg-blue-900 focus:bg-gray-200 dark:focus:bg-gray-800 focus:z-20 focus:outline-none"
         @click="copy(glyph.item ? glyph.item.value : glyph.value)"
       >
         {{ glyph.item ? glyph.item.value : glyph.value }}
