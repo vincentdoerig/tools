@@ -7,7 +7,7 @@
         Online Toolbox
       </h1>
       <p class="text-center">
-        Collection of online tools — No bullshit and straight to the point
+        Collection of online tools made by myself. — No bullshit and straight to the point.
       </p>
       <p class="text-center">
         Made by
@@ -73,12 +73,13 @@ export default defineComponent({
   setup() {
     const cards: Card[] = [
       {
-        title: 'Hello World',
+        title: 'About',
         link: {
           type: URLType.Slug,
-          data: 'hello',
+          data: 'about',
         },
-        description: '👋',
+        description: 'Everything about this site.',
+        class: 'border-blue-800 hover:border-blue-400 dark:border-blue-300 dark:hover:border-blue-200',
       },
       {
         title: 'Word Count',
@@ -143,7 +144,7 @@ export default defineComponent({
           data: '/',
         },
         description: '',
-        class: 'opacity-75 bg-gradient-to-r from-blue-50 to-red-100 dark:from-black dark:to-gray-800',
+        class: 'opacity-75 bg-gradient-to-r from-blue-50 to-red-100 dark:from-black dark:to-gray-800 cursor-not-allowed',
       },
     ]
 

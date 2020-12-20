@@ -5,7 +5,7 @@ import { VueClipboard } from '@soerenmartius/vue3-clipboard'
 import './index.css'
 
 import Home from './Home.vue'
-import Hello from './components/HelloWorld.vue'
+import About from './components/About.vue'
 import VideoToGIF from './components/VideoToGIF.vue'
 import WordCount from './components/WordCount.vue'
 import Date from './components/Date.vue'
@@ -19,7 +19,7 @@ const routes = [
   { path: '/video-to-gif', component: VideoToGIF },
   { path: '/arrows', component: Arrows },
   { path: '/glyphs', component: Glyphs },
-  { path: '/hello', component: Hello },
+  { path: '/about', component: About },
 ]
 
 const app = createApp(App)
