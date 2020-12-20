@@ -11,6 +11,7 @@ import WordCount from './components/WordCount.vue'
 import Date from './components/Date.vue'
 import Arrows from './components/Arrows.vue'
 import Glyphs from './components/Glyphs.vue'
+import NotFound from './components/NotFound.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -20,6 +21,7 @@ const routes = [
   { path: '/arrows', component: Arrows },
   { path: '/glyphs', component: Glyphs },
   { path: '/about', component: About },
+  { path: '/:pathMatch(.*)*', component: NotFound },
 ]
 
 const app = createApp(App)
