@@ -138,6 +138,14 @@ export default defineComponent({
         description: 'Find, copy and paste commonly used glyphs.',
       },
       {
+        title: 'URL Shortener (chl.li)',
+        link: {
+          type: URLType.Url,
+          data: 'https://chl.li',
+        },
+        description: 'Shorten links with this privacy-friendly URL shortener.',
+      },
+      {
         title: 'More coming soon™...',
         link: {
           type: URLType.Slug,
