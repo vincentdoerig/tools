@@ -19,6 +19,39 @@ module.exports = {
             thead: {
               color: theme('colors.gray.200'),
             },
+            a: {
+              color: theme('colors.gray.200'),
+              '&:hover': {
+                color: theme('colors.gray.50'),
+              },
+            },
+            h1: {
+              color: theme('colors.gray.300'),
+            },
+            h2: {
+              color: theme('colors.gray.300'),
+            },
+            h3: {
+              color: theme('colors.gray.300'),
+            },
+            h4: {
+              color: theme('colors.gray.300'),
+            },
+            h5: {
+              color: theme('colors.gray.300'),
+            },
+            h6: {
+              color: theme('colors.gray.300'),
+            },
+            strong: {
+              color: theme('colors.gray.300'),
+            },
+            code: {
+              color: theme('colors.gray.300'),
+            },
+            figcaption: {
+              color: theme('colors.gray.500'),
+            },
           },
         },
       }),

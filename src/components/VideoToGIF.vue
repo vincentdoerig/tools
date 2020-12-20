@@ -184,7 +184,7 @@
         <pre
           v-if="showLogs"
           ref="logComponent"
-          class="px-2 py-1 mt-2 mb-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56 dark:bg-gray-900 dark:text-gray-300"
+          class="px-2 py-1 mt-2 mb-6 overflow-auto text-xs leading-5 text-gray-900 whitespace-pre-wrap bg-gray-200 rounded shadow max-h-56 dark:bg-gray-800 dark:text-gray-300"
         >{{ logs }}</pre>
       </div>
     </div>
