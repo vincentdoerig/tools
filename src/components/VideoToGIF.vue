@@ -2,6 +2,7 @@
   <ToolsComponent
     title="Video to GIF converter"
     description="/ɡɪf/ — no upload, everything happens on your device"
+    meta-description="Convert a video to a GIF file through your browser. The conversion happens on your device, with no upload to the cloud."
   >
     <div v-if="!isSupported">
       <div class="p-4 border-l-4 border-yellow-400 bg-yellow-50">

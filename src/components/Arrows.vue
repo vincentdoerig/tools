@@ -2,6 +2,7 @@
   <ToolsComponent
     title="Arrows"
     description="Find the arrow you need. Click to copy. Some arrows might not display correctly/differently."
+    meta-description="Search through and copy ASCII arrows with ease. Paste them in any document or application."
     :related="[{ name: 'Glyphs', link: 'glyphs' }]"
   >
     <transition

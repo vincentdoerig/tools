@@ -2,6 +2,7 @@
   <ToolsComponent
     title="Date"
     description="All the dates."
+    meta-description="The current date in different time formats like UTC, ISO or as readable text."
   >
     <transition
       enter-active-class="transition duration-100 ease-out"

@@ -2,6 +2,7 @@
   <ToolsComponent
     title="Glyphs"
     description="Glyphs that are used sometimes but hard to find. Click to copy."
+    meta-description="Search through and copy popular ASCII glyphs with ease. Paste them in any document or application."
     :related="[{ name: 'Arrows', link: 'arrows' }]"
   >
     <transition

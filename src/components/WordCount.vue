@@ -2,6 +2,7 @@
   <ToolsComponent
     title="Word Count"
     description="Text is saved locally on every edit."
+    meta-description="A character counter that provides a report on the number of characters, words and sentences in your text."
   >
     <textarea
       ref="textarea"

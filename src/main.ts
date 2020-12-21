@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import { createHead } from '@egoist/vue-head'
 import App from './App.vue'
 import { VueClipboard } from '@soerenmartius/vue3-clipboard'
 import './index.css'
@@ -25,6 +26,7 @@ const routes = [
 ]
 
 const app = createApp(App)
+const head = createHead()
 const router = createRouter({
   history: createWebHistory(),
   routes,
@@ -37,6 +39,7 @@ const router = createRouter({
   },
 })
 
+app.use(head)
 app.use(router)
 app.use(VueClipboard)
 

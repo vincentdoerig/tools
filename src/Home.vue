@@ -1,4 +1,24 @@
 <template>
+  <!-- eslint-disable vue/max-attributes-per-line -->
+  <Head>
+    <title>{{ meta.title }}</title>
+    <meta name="title" content="Tools">
+    <meta name="description" :content="meta.description">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tools.doerig.dev">
+    <meta property="og:title" :content="meta.title">
+    <meta property="og:description" :content="meta.description">
+    <meta property="og:image" :content="meta.image">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tools.doerig.dev">
+    <meta property="twitter:title" :content="meta.title">
+    <meta property="twitter:description" :content="meta.description">
+    <meta property="twitter:image" :content="meta.image">
+  </Head>
   <div class="max-w-5xl mx-auto my-6">
     <div class="flex flex-col items-center justify-center text-gray-600 dark:text-gray-400">
       <h1
@@ -43,6 +63,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import { Head } from '@egoist/vue-head'
 import Card from './components/Card.vue'
 
 enum CATEGORY {
@@ -67,6 +88,7 @@ interface Card {
 
 export default defineComponent({
   components: {
+    Head,
     Card,
   },
 
@@ -156,7 +178,13 @@ export default defineComponent({
       },
     ]
 
-    return { cards }
+    const meta = {
+      title: 'Home — Tools',
+      description: 'A site with many useful online tools.',
+      image: 'https://og-image-seven-pi.vercel.app/%23%23%23%20Online%20Toolbox.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fcloud-bn0ai69us.vercel.app%2F0toolbox-black.svg',
+    }
+
+    return { cards, meta }
   },
 })
 </script>

@@ -1,6 +1,7 @@
 <template>
   <ToolsComponent
     title="About"
+    meta-description="About tools.doerig.dev, a site with many useful online tools."
   >
     <div class="prose dark:prose-dark">
       <p>
