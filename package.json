@@ -17,6 +17,7 @@
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.3.1",
     "dayjs": "^1.9.7",
+    "exif-js": "https://github.com/exif-js/exif-js",
     "fuse.js": "^6.4.3",
     "vue": "^3.0.4",
     "vue-router": "^4.0.0-rc.3"
