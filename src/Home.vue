@@ -128,6 +128,14 @@ export default defineComponent({
         description: 'Stopwatch with an integrated break timer.',
       },
       {
+        title: 'Editor',
+        link: {
+          type: URLType.Url,
+          data: 'https://editor.vdoerig.com/',
+        },
+        description: 'Simple browser-based text editor.',
+      },
+      {
         title: 'Imgur Image Uploader',
         link: {
           type: URLType.Url,
