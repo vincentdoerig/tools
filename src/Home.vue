@@ -7,14 +7,14 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tools.doerig.dev">
+    <meta property="og:url" content="https://tools.vdoerig.com">
     <meta property="og:title" :content="meta.title">
     <meta property="og:description" :content="meta.description">
     <meta property="og:image" :content="meta.image">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://tools.doerig.dev">
+    <meta property="twitter:url" content="https://tools.vdoerig.com">
     <meta property="twitter:title" :content="meta.title">
     <meta property="twitter:description" :content="meta.description">
     <meta property="twitter:image" :content="meta.image">
@@ -33,7 +33,7 @@
         Made by
         <a
           class="font-medium text-black underline hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
-          href="https://doerig.dev"
+          href="https://vdoerig.com"
         >@vincentdoerig</a>. Open Source on
         <a
           class="font-medium underline ext-black hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
@@ -123,7 +123,7 @@ export default defineComponent({
         title: 'Stopwatch',
         link: {
           type: URLType.Url,
-          data: 'https://gymtimer.io',
+          data: 'https://timer.vdoerig.com/',
         },
         description: 'Stopwatch with an integrated break timer.',
       },
@@ -131,7 +131,7 @@ export default defineComponent({
         title: 'Imgur Image Uploader',
         link: {
           type: URLType.Url,
-          data: 'https://img.doerig.dev',
+          data: 'https://img.vdoerig.com',
         },
         description: 'Quickly upload any image to imgur.com.',
       },
