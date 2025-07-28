@@ -7,7 +7,7 @@ import './index.css'
 
 import Home from './Home.vue'
 import About from './components/About.vue'
-import VideoToGIF from './components/VideoToGIF.vue'
+// import VideoToGIF from './components/VideoToGIF.vue'
 import WordCount from './components/WordCount.vue'
 import Date from './components/Date.vue'
 import Arrows from './components/Arrows.vue'
@@ -19,7 +19,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/word-count', component: WordCount },
   { path: '/date', component: Date },
-  { path: '/video-to-gif', component: VideoToGIF },
+  // { path: '/video-to-gif', component: VideoToGIF },
   { path: '/arrows', component: Arrows },
   { path: '/glyphs', component: Glyphs },
   { path: '/exif-remover', component: ExifRemover },

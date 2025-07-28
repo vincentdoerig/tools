@@ -135,14 +135,14 @@ export default defineComponent({
         },
         description: 'Quickly upload any image to imgur.com.',
       },
-      {
-        title: 'Video to GIF',
-        link: {
-          type: URLType.Slug,
-          data: 'video-to-gif',
-        },
-        description: 'Online video to gif converter.',
-      },
+      // {
+      //   title: 'Video to GIF',
+      //   link: {
+      //     type: URLType.Slug,
+      //     data: 'video-to-gif',
+      //   },
+      //   description: 'Online video to gif converter.',
+      // },
       {
         title: 'Arrows',
         link: {
