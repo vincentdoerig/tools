@@ -168,6 +168,14 @@ export default defineComponent({
         description: 'Find, copy and paste commonly used glyphs.',
       },
       {
+        title: 'QR Code Generator',
+        link: {
+          type: URLType.Slug,
+          data: 'qr-code',
+        },
+        description: 'Generate a QR code from any text or URL.',
+      },
+      {
         title: 'URL Shortener (chl.li)',
         link: {
           type: URLType.Url,

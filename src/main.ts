@@ -13,6 +13,7 @@ import Date from './components/Date.vue'
 import Arrows from './components/Arrows.vue'
 import Glyphs from './components/Glyphs.vue'
 import ExifRemover from './components/ExifRemover.vue'
+import QRCode from './components/QRCode.vue'
 import NotFound from './components/NotFound.vue'
 
 const routes = [
@@ -22,6 +23,7 @@ const routes = [
   // { path: '/video-to-gif', component: VideoToGIF },
   { path: '/arrows', component: Arrows },
   { path: '/glyphs', component: Glyphs },
+  { path: '/qr-code', component: QRCode },
   { path: '/exif-remover', component: ExifRemover },
   { path: '/about', component: About },
   { path: '/:pathMatch(.*)*', component: NotFound },
