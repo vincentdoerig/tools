@@ -14,24 +14,10 @@
         >source code</a> is available and accessible on GitHub. If you have any suggestion for a missing tool I could build or want to submit one yourself, feel free to open an issue or a pull request.
       </p>
       <p>
-        If you like this project, you may support me on <a
-          href="https://ko-fi.com/vincentdoerig"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Ko-fi</a>, share the website with anyone you think would enjoy or give me a star on <a
+        If you like this project share the website with anyone you think would enjoy or give me a star on <a
           href="https://github.com/vincentdoerig/tools"
           target="_blank"
         >GitHub</a>. Cheers!
-      </p>
-      <p>
-        <a
-          href="https://ko-fi.com/P5P01ZU77"
-          target="_blank"
-        ><img
-          class="h-9"
-          src="../assets/ko-fi.png"
-          alt="Buy Me a Coffee at ko-fi.com"
-        ></a>
       </p>
     </div>
   </ToolsComponent>
