@@ -190,6 +190,8 @@ const layoutOptions: { value: DiffStyle; label: string; svg: string }[] = [
   },
 ];
 
+const MAX_UPLOAD_SIZE_BYTES = 5 * 1024 * 1024;
+
 const readFileAsText = (file: File) =>
   new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
@@ -257,7 +259,24 @@ export default defineComponent({
       () => oldText.value.trim() !== "" || newText.value.trim() !== "",
     );
 
+    const isFileTooLarge = (file: File) => {
+      if (file.size <= MAX_UPLOAD_SIZE_BYTES) {
+        return false;
+      }
+
+      const maxMb = MAX_UPLOAD_SIZE_BYTES / (1024 * 1024);
+      const fileMb = (file.size / (1024 * 1024)).toFixed(2);
+      alert(
+        `File \"${file.name}\" is too large (${fileMb} MB). Maximum allowed size is ${maxMb} MB.`,
+      );
+      return true;
+    };
+
     const loadFile = async (side: FileSide, file: File) => {
+      if (isFileTooLarge(file)) {
+        return;
+      }
+
       const contents = await readFileAsText(file);
 
       if (side === "old") {
@@ -272,6 +291,10 @@ export default defineComponent({
     };
 
     const loadFilePair = async (firstFile: File, secondFile: File) => {
+      if (isFileTooLarge(firstFile) || isFileTooLarge(secondFile)) {
+        return;
+      }
+
       const [firstContents, secondContents] = await Promise.all([
         readFileAsText(firstFile),
         readFileAsText(secondFile),
