@@ -9,6 +9,7 @@ import Home from './Home.vue'
 import About from './components/About.vue'
 // import VideoToGIF from './components/VideoToGIF.vue'
 import WordCount from './components/WordCount.vue'
+import Diff from './components/Diff.vue'
 import Date from './components/Date.vue'
 import Arrows from './components/Arrows.vue'
 import Glyphs from './components/Glyphs.vue'
@@ -24,6 +25,7 @@ const routes = [
   { path: '/arrows', component: Arrows },
   { path: '/glyphs', component: Glyphs },
   { path: '/qr-code', component: QRCode },
+  { path: '/diff', component: Diff },
   { path: '/exif-remover', component: ExifRemover },
   { path: '/about', component: About },
   { path: '/:pathMatch(.*)*', component: NotFound },

@@ -13,6 +13,7 @@
   "dependencies": {
     "@egoist/vue-head": "^0.1.8",
     "@ffmpeg/ffmpeg": "^0.9.6",
+    "@pierre/diffs": "^1.1.19",
     "@soerenmartius/vue3-clipboard": "^0.1.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.10",

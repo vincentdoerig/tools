@@ -104,6 +104,14 @@ export default defineComponent({
         class: 'border-blue-800 hover:border-blue-400 dark:border-blue-300 dark:hover:border-blue-200',
       },
       {
+        title: 'Diff',
+        link: {
+          type: URLType.Slug,
+          data: 'diff',
+        },
+        description: 'Compare two files or pasted text side by side.',
+      },
+      {
         title: 'Word Count',
         link: {
           type: URLType.Slug,
