@@ -379,6 +379,7 @@ export default defineComponent({
           diffIndicators: "bars", // 'classic' | 'bars' | 'none'
           lineDiffType: "word",
           hunkSeparators: "line-info",
+          overflow: "wrap",
           unsafeCSS: `
             [data-diffs-header] {
               position: sticky;
